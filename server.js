@@ -24,9 +24,9 @@ import DeleteCommentRoute from "./routes/DeleteCommentRoute.js";
 import UploadRoute from "./routes/UploadRoute.js";
 import ImageRoute from "./routes/ImageRoute.js";
 import LoginRoute from "./routes/LoginRoute.js";
-import EmailTokenRoute from "./routes/EmailTokenRoute.js"
-import CheckRecoveryEmailRoute from  "./routes/CheckRecoveryEmailRoute.js"
-import ChangePasswordRoute from "./routes/ChangePasswordRoute.js"
+import EmailTokenRoute from "./routes/EmailTokenRoute.js";
+import CheckRecoveryEmailRoute from "./routes/CheckRecoveryEmailRoute.js";
+import ChangePasswordRoute from "./routes/ChangePasswordRoute.js";
 import Token from "./models/Token.js";
 
 import { connectDb } from "./config/db.js";
@@ -50,13 +50,8 @@ app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use(
   cors({
     origin: [
-
-      "https://chiemela-postboard.netlify.app",
-      // "http://localhost:3000"
-      "http://ec2-18-226-159-208.us-east-2.compute.amazonaws.com:8091"
-    
-
-      
+      // "https://chiemela-postboard.netlify.app",
+      // "http://localhost:3000",
     ],
     methods: ["GET", "POST", "DELETE"],
     credentials: true,
@@ -77,13 +72,12 @@ app.use("/delete", DeleteCommentRoute);
 app.use("/upload", UploadRoute);
 app.use("/image", ImageRoute);
 app.use("/login", LoginRoute);
-app.use("/users", EmailTokenRoute)
-app.use("/send_recovery_email", CheckRecoveryEmailRoute)
-app.use("/change_password", ChangePasswordRoute)
+app.use("/users", EmailTokenRoute);
+app.use("/send_recovery_email", CheckRecoveryEmailRoute);
+app.use("/change_password", ChangePasswordRoute);
 
 // import express from "express"
 // const router = express.Router()
-
 
 connectDb();
 
@@ -105,11 +99,12 @@ export const getUserFromToken = async (token) => {
 
 
 
-  app.get("/", (req, res) => {
-    res.send('<h1> myReddit App has moved here ---> <a href="https://chiemela-postboard.netlify.app/">myRedditApp</a></h1>\n');
-  });
+app.get("/", (req, res) => {
+  res.send(
+    '<h1>Our DevOps Backend Project is running Fine!!</h1>\n'
+  );
+});
 // }
-
 
 // app.get("/f", (req, res) => {
 //   res.send("myReddit we API is running");
