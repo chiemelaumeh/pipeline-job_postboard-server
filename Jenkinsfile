@@ -11,7 +11,6 @@ pipeline {
         stage("Code coverage") { 
             steps {
                 jacoco() 
-                
             }
            }
 
