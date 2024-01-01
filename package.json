@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "publishConfig": {
-    "registry":"http://ec2-18-219-84-162.us-east-2.compute.amazonaws.com:8081/repository/postboard-server_hosted/"
+    "registry":"http://ec2-52-15-146-91.us-east-2.compute.amazonaws.com:8081/repository/postboard-server_hosted/"
   },
   "author": "",
   "license": "ISC",
